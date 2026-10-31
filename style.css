@@ -1,0 +1,166 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    overflow: hidden;
+    font-family: Georgia, serif;
+    background: linear-gradient(135deg, #fff0f5, #f8bbd0, #fce4ec);
+}
+
+/* First Screen */
+
+#home {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+#home h1 {
+    color: #c2185b;
+    font-size: clamp(25px, 5vw, 38px);
+    margin-bottom: 20px;
+}
+
+#home p {
+    color: #79505f;
+    font-size: 17px;
+}
+
+/* Buttons */
+
+button {
+    padding: 15px 30px;
+    margin-top: 30px;
+    background: #d6336c;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 20px #ff5c8c;
+}
+
+/* Letter */
+
+#letter {
+    display: none;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    position: relative;
+    z-index: 2;
+}
+
+.paper {
+    width: min(90vw, 430px);
+    max-height: 85vh;
+    overflow-y: auto;
+    padding: 30px;
+    background: #fff0f3;
+    color: #522c3b;
+    text-align: center;
+    border-radius: 18px;
+    box-shadow: 0 0 35px #ff6c9b;
+    animation: open 1s ease;
+}
+
+.paper h2 {
+    color: #c2185b;
+    margin: 20px 0;
+}
+
+.heart {
+    font-size: 55px;
+    animation: heartbeat 1.2s infinite;
+}
+
+#message {
+    text-align: left;
+    line-height: 1.9;
+    white-space: pre-line;
+    font-size: 16px;
+}
+
+#final {
+    margin-top: 25px;
+    color: #c2185b;
+}
+
+/* Rain */
+
+.drop {
+    position: fixed;
+    top: -70px;
+    width: 2px;
+    height: 65px;
+    background: linear-gradient(transparent, #9bcaff);
+    animation: rain linear infinite;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Crying Emojis */
+
+.cry {
+    position: fixed;
+    top: -50px;
+    font-size: 28px;
+    animation: fall linear infinite;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Animations */
+
+@keyframes rain {
+    to {
+        transform: translateY(110vh);
+    }
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(110vh);
+    }
+}
+
+@keyframes open {
+    from {
+        opacity: 0;
+        transform: scale(.7) translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+@keyframes heartbeat {
+    50% {
+        transform: scale(1.2);
+    }
+}
+.lastLines {
+    margin-top: 25px;
+    color: #a8325d;
+    font-size: 15px;
+    line-height: 1.8;
+    font-style: italic;
+    text-align: center;
+}
